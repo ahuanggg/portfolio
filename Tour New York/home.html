@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>New York City</title>
+</head>
+<body>
+    <div id="wrapper"> 
+
+            <div class="container">
+                <div id="slider">
+                    <div id="box">
+                        <div id ="box2">
+                                <iframe src="https://www.google.com/maps/d/embed?mid=1G06AJmrIV16PUQ9iW9y4UU79bkJJpFFa" ></iframe>
+                        </div>
+                        <p id="caption">Map of NYC!</p>
+                    </div>
+                    
+                </div> <!-- End of slider -->
+                
+                <div id="hometext">
+                    <div class="header1">
+                        Why You Should Visit New York City!
+                    </div>
+                    <p class="header2">The 5 Boroughs</p>
+                    <p class="basictext"> New York City isn't just Manhattan only, there are other great places to explore!
+                        NYC has places such as Williamsberg in Brooklyn for nice chill vibes, or Main Street in Queens for authentic Asian cuisine,
+                        or Bronx Zoo in Bronx to see some exotic animals. There are many places besides Manhattan that make visiting NYC worthwhile.</p>
+                    <p class="header2">NYC's Famous Broadway Shows</p>
+                    <p class="basictext"> New York City's broadway shows aren't famous for no reason. They are one of the best in the world- definitely a valid reason
+                        to visit New York City. There is a long 13 mile walk from Bowling Green to Inwood that has a whole bunch of broadway theaters. There is 
+                        definitly something for everyone there!
+                        <p class="header2">NYC's Architecture</p>
+                    <p class="basictext"> Buildings in New York City are famous all around the world! These include the Empire State Building, the One World Trade Center,
+                        the Flatiron Building, Rockefeller Plaze and many more! These buildings are definitely extraordinary and if you haven't seen them yet you have to see them now!</p>
+                        <p class="header2">Delicious Food</p>
+                        <p class="basictext"> Of course I had to add food! The food in NYC is impeccable- the pizza, the street vendor's hotdog, and I can't forget about the 
+                            bacon, egg and cheese that really makes New York City, New York City. The food in New York City is fresh and plentiful. Since New York City is such a melting pot of 
+                            cultures there are so many different foods that you have never tried! </p>
+                </div>
+
+            </div> <!-- End of container -->
+              
+
+
+
+
+
+</div> <!-- End of wrapper -->
+
+    
+<script>
+    var sliderImage = document.getElementById('box2');
+    var cap = document.getElementById('caption');
+    console.log(cap);
+    // put the images in an array
+    var caption = [" Delicious food! " , " Brookylyn Bridge! " , " The NYC Skyline! "];
+    var image = ['slide2', 'slide3', 'slide1' ];
+    var i = image.length;
+
+    // function nextCaption() {
+    //     var x = caption.length;
+    //     console.log("in next2");
+    //     if(i<caption.length) {
+    //         i++;
+    //     } else {
+    //         i = 1;
+    //     }
+
+    //     cap.innterHTML = "<p id='caption'>" + caption[i-1] + "</p>";
+    //     console.log(cap.innterHTML = "<p id='caption'>" + caption[i-1] + "</p>");
+
+    // }
+
+    //function to change slides
+    function nextImage() {
+        console.log(sliderImage);
+        console.log("in next");
+        if(i<image.length) {
+            i++;
+        } else {
+            i = 1;
+        }
+        document.getElementById('caption').innerHTML = '<p id="caption">' + caption[i-1] + '</p>';
+        sliderImage.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>";
+        console.log(document.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>");
+    }
+
+    function prevImage() {
+        console.log("in prev")
+        if(i<image.length+1 && i>1) {
+            i--;
+        } else {
+            i = image.length;
+        }
+        document.getElementById('caption').innerHTML = '<p id="caption">' + caption[i-1] + '</p>';
+        sliderImage.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>";
+        console.log(document.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>");
+    }
+
+</script>
+</body>
+</html>

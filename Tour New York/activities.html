@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    
+    <title>New York City</title>
+</head>
+<body>
+    <div id="wrapper"> 
+            <div id="center">
+                <div class="header1">
+                    Things to do in NYC!
+                </div>
+            </div>
+
+            <div class="container">
+                    <div id="slider">
+                        <div id="box">
+                            <div id="box2">
+                                <img id="slidepic" src="images/slide7.jpg" title="slide7" alt="slide7">
+                            </div>
+                            <div id="caption2">
+                                <p id="caption">Bronx Zoo</p>
+                            </div>
+                            
+                        </div>
+                        <button class="prev " onclick="prevImage();"> &lt; </button>
+                        <button class="next " onclick="nextImage()"> > </button>
+                    </div> <!-- End of slider -->
+                    
+                    <div id="hometext">
+                        
+                        <p class="header2">Bronx Zoo</p>
+                        <p class="basictext"> Come visit one of the largest zoos in the whole United States! It is known world-wide for its wildlife, not only that but it also has its own 
+                            aquarium within. Visiting a zoo is always a blast why not go to the best one!
+                        </p>
+                        <p class="header2"> Time Square</p>
+                        <p class="basictext">Everyone from all over the wolrd knows about NYC's famous Time Square. It is a tourist attraction but it is worth grabbing a flick there. 
+                            There are so many lights that even at night it will look like the sun is still out! Time Square has so much things to do, such as watching a Broadway show, or eating delicious foods. There are also 
+                            cute souvenir shops that you can visit to buy that fridge magnet to document your visit to NYC.
+                            
+                        <p class="header2">Central Park</p>
+                        <p class="basictext"> Central Park is one of the largest parks in NYC and a must when you come to NYC. You can spend the whole day in Central Park and 
+                            still not explore everything. That is how big the park is! There are many ponds and bridges that just makes the place so unforgettable.
+                        </p>
+                            
+                        <p class="header2">Brooklyn Bridge Park</p>
+                        <p class="basictext"> Saving the best for last: Brooklyn Bridge Park. This place is full of things to do and things to see. You can play volleyball, soccer, biking, fishing, bbqiing, basketball,
+                            handball, skating, not to menion that the whole manhatten skyline is right behind it too. So while doing any of these things you are literally one turn away from one of the most beautiful skylines in the whole world.
+                            There are also seasonal things such as ice skating in the winter and canoeing in the summer! 
+                        </p>
+                    </div>
+    
+                </div> <!-- End of container -->
+
+
+
+
+    </div> <!-- End of left column -->
+
+    
+
+    <script>
+        var sliderImage = document.getElementById('box2');
+        // put the images in an array
+        var caption = ["Time Square", "Central Park" , "Brooklyn Bridge Park", "Bronx Zoo"];
+        var image = ['slide5', 'slide6', 'slide4', 'slide7'];
+        var i = image.length;
+
+        // function nextCaption() {
+        //     var x = caption.length;
+        //     console.log("in next2");
+        //     if(i<caption.length) {
+        //         i++;
+        //     } else {
+        //         i = 1;
+        //     }
+
+        //     document.getElementById('caption').innerHTML = '<p id='caption'>' + caption[i-1] + "</p>";
+        //     console.log(document.getElementById('caption').innerHTML = '<p id='caption'>' + caption[i-1] + "</p>");
+
+        // }
+
+        //function to change slides
+        function nextImage() {
+            console.log(cap)
+            
+            if(i<image.length) {
+                i++;
+            } else {
+                i = 1;
+            }
+            document.getElementById('caption').innerHTML = '<p id="caption">' + caption[i-1] + '</p>';
+            console.log(document.getElementById('caption').innerHTML = '<p id="caption">' + caption[i-1] + "</p>");
+            sliderImage.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>";
+            console.log(document.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>");
+        }
+
+        function prevImage() {
+            console.log("in prev")
+            if(i<image.length+1 && i>1) {
+                i--;
+            } else {
+                i = image.length;
+            }
+            document.getElementById('caption').innerHTML = '<p id="caption">' + caption[i-1] + "</p>";
+            sliderImage.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>";
+            console.log(document.innerHTML = "<img id='slidepic' src='images/" + image[i-1] + ".jpg'>");
+        }
+    </script>
+</body>
+</html>
