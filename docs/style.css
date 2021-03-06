@@ -8,3 +8,29 @@ hr {
 	border-top: 1px dashed #8c8b8b;
 	border-bottom: 1px dashed #fff;
 }
+
+/* 
+	css for index copy
+*/
+
+.parallax-container {
+	height: 900px !important;
+}
+
+#logo {
+	height: auto;
+	width: auto;
+	max-height: 50px;
+	max-width: 250px;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+a {
+	color: black !important;
+}
+
+nav {
+	background-color: rgba(255, 255, 255, 0) !important;
+	box-shadow: none !important;
+}
